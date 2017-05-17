@@ -1,0 +1,40 @@
+#firstForm {
+  padding: 5px;
+  text-align: center;
+  margin: 40px;
+}
+
+#date  {
+  margin: 6px;
+  font-size: 13px;
+}
+
+#text  {
+  margin: 6px;
+  font-size: 15px;
+}
+
+#typeSelect {
+  margin: 6px;
+  font-size: 13px;
+}
+
+#creditCardUsed {
+  margin: 6px;
+  font-size: 13px;
+}
+
+#totalSpent {
+margin: 6px;
+font-size: 13px;
+}
+
+#fee {
+  margin: 6px;
+  font-size: 13px;
+}
+
+#pointsEarned {
+  margin: 6px;
+  font-size: 13px;
+}

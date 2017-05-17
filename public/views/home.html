@@ -1,0 +1,22 @@
+<p>home</p>
+<form id="firstForm">
+  <!-- <input type="date" id="date" placeholder="Date" ng-model="date"> -->
+  <input class="date-input" ng-model="date" type="text" id="datepicker" placeholder="mm/dd/yy"/>
+  <input type="text" id="location" placeholder="Location" ng-model="location">
+  <br>
+  <select id="typeSelect" ng-model="typeSelect">
+        <option disabled selected value> -- Select Gift Card Type -- </option>
+        <option value="simon"> Simon </option>
+        <option value="oneVanilla"> One Vanilla </option>
+        <option value="visaGiftCard"> Visa Prepaid Gift Card </option>
+        <option value="masterGiftCard"> Mastercard Prepaid Gift Card </option>
+        <option value="Other"> Other </option>
+      </select>
+  <input type="text" id="creditCardUsed" placeholder="Credit Card Used" ng-model="credCardUsed">
+  <br>
+  <input type="text" id="totalSpent" placeholder="Total Spent" ng-model="totalSpent">
+  <input type="text" id="fee" placeholder="Fees" ng-model="fee">
+  <input type="text" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
+  <br>
+  <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
+</form>

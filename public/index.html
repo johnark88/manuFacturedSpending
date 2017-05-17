@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link href="files/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
+    <!-- Angular -->
+    <script src="inc/angular.min.js"></script>
+    <script src="inc/angular-ui-router.js"></script>
+    <!-- moment -->
+    <script src="inc/moment.min.js"></script>
+    <!-- jqueryDate picker -->
+    <script src="inc/jquery.min.js"></script>
+    <script src="files/jquery-ui.js"></script>
+    <script src="files/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="files/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="files/jquery-ui.min.css">
+    <link rel="stylesheet" href="files/jquery-ui.theme.min.css">
+    <!-- Front end scripts -->
+    <script src="/scripts/client.js"></script>
+    <script src="/scripts/controllers/logOnController.js"></script>
+    <script src="/scripts/controllers/homeController.js"></script>
+
+
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <title> Manufactured Spending </title>
+  </head>
+
+  <body ng-app="routerApp" ng-controller="homeController">
+    <ul>
+      <li><a ui-sref="logOn"> Log On </a></li>
+      <li><a ui-sref="home"> Home </a></li>
+    </ul>
+    <!-- use ng-if for log on -->
+    <div ui-view></div>
+    <!-- This is where the ng-view -->
+
+</html>
