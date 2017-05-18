@@ -47,3 +47,4 @@ jspm_packages
 
 # Firebase
 config.js
+serviceAccountKey.json

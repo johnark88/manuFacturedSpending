@@ -2,6 +2,8 @@ require('dotenv').config(); // Imports all .env values
 var path = require('path');
 var express = require('express');
 var app = express();
+
+var admin = require("firebase-admin");
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({
     extended: false
