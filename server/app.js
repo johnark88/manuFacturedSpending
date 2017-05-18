@@ -24,17 +24,6 @@ app.use(bodyParser.json());
 var homeRoutes = require('./routes/homeRoutes');
 app.use('/newUsr', homeRoutes);
 
-//mongodb connection
-var url = 'mongodb://localhost:27017/mstrackingapp';
-
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  db.close();
-});
-
 //listen and port decision
 app.listen(portDecision, function() {
     console.log('listening on', portDecision);

@@ -10,12 +10,14 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
     //get input from users - in object to send to server
     var formDataToSend = {
       date: moment($('#datepicker').val()).format('MM-DD-YYYY'),
-      location: $scope.location,
-      typeSelect: $scope.typeSelect,
+      location: $scope.location, // create drop down and let user add to it
+      typeSelect: $scope.typeSelect,  //
       credCardUsed: $scope.credCardUsed,
       totalSpent: $scope.totalSpent,
       fee: $scope.fee,
       pointsEarned: $scope.pointsEarned
+      // last four digits of gift card
+      // vin # below barcode 
     }; //end object to send
     console.log(formDataToSend, 'form obj');
 
