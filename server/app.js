@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 //server routes
 var homeRoutes = require('./routes/homeRoutes');
-app.use('/newUsr', homeRoutes);
+app.use('/newGiftCard', homeRoutes);
 
 //listen and port decision
 app.listen(portDecision, function() {

@@ -5,38 +5,37 @@ var assert = require('assert');
 
 //mongodb connection
 var url = 'mongodb://localhost:27017/mstrackingapp';
+
+//post route
 router.post('/', function(req, res) {
-  console.log('/newUser here');
+
   console.log(req.body, 'req');
-  var newGiftCard = 
+  var newGiftCard = req.body;
+  console.log(newGiftCard, 'newwwwwww');
+
+
   // Use connect method to connect to the server
   MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
     console.log("Connected successfully to server");
 
-    // Insert a single document
-    db.collection('batman').insertOne({
-      a: 1
+    // Insert a new gift card
+    // need to figure out a unique id for each
+    // and properties to object - such as ID # or giftCard1, giftCard2  etc
+    db.collection('gift-cards').insertOne({
+      //connect to db collection gift-cards
+      // insert new gift card from current user
+      newGiftCard
     }, function(err, r) {
       assert.equal(null, err);
       assert.equal(1, r.insertedCount);
+      console.log(r.insertedCount, 'r.insertedCount');
+      //close connection to db
+      db.close();
 
-
-      db.collection('inserts').insertMany([{
-        a: 2
-      }, {
-        a: 3
-      }], function(err, r) {
-        assert.equal(null, err);
-        assert.equal(2, r.insertedCount);
-
-        db.close();
-
-        res.send('Got a POST request at /user');
-      }); //end mongo connect
-    });
-  });
-});
+    }); //end mongo connect
+  });// end mongo client
+});//end router . post
 
 
 module.exports = router;
