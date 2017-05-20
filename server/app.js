@@ -24,6 +24,10 @@ app.use(bodyParser.json());
 var homeRoutes = require('./routes/homeRoutes');
 app.use('/newGiftCard', homeRoutes);
 
+//firebase-admin
+var firebase = require('./routes/firebase');
+app.use(firebase);
+
 //listen and port decision
 app.listen(portDecision, function() {
     console.log('listening on', portDecision);
