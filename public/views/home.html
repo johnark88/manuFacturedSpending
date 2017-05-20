@@ -1,7 +1,7 @@
 <p>home</p>
 <!-- Add new information form -->
 <form id="firstForm">
-  <input class="date-input" ng-model="date" type="text" id="datepicker" placeholder="mm/dd/yy"/>
+  <input class="date-input" ng-model="date" type="text" id="datepicker" placeholder="mm/dd/yy" />
   <input type="text" id="location" placeholder="Location" ng-model="location">
   <br>
   <select id="typeSelect" ng-model="typeSelect">
@@ -19,6 +19,42 @@
   <input type="text" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
   <br>
   <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
+  <input type="checkbox" name="ck" value="CHECKBOX">
 </form>
+<!--
+<form id="firstForm">
+  <div >
+  <input class="date-input" ng-model="date" type="text" id="datepicker" placeholder="mm/dd/yy"/>
+  <select class="locationSelect" ng-model="locationSelect">
+  <option disabled selected value> -- Purchased at -- </option>
+  <option value="Walgreens"> Walgreens </option>
+  <option value="CVS"> CVS </option>
+  <option value=""> Add New location Card </option>
+  </select>
+    </div>
+    <div class="ccSelect">
+    <select class="creditCardUsed" name="" ng-model="creditCardUsed">
+    <option disabled selected value> -- Credit Card Used -- </option>
+    <option value="CSR"> CSR </option>
+    <option value="AmexPersonal"> American Express personal </option>
+    <option value="chaseSpgPers"> Chase SPG personal </option>
+    <option value=""> Add New </option>
+    </select>
+    </div>
+    <input type="text" id="totalSpent" placeholder="Total Spent" ng-model="totalSpent">
+    <input type="text" id="fee" placeholder="Fees" ng-model="fee">
+    <input type="text" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
+    <input type="checkbox" value="moneyOrderDetail"> Add Money Order Details
+    
+    <input type="checkbox" name="" value="">
+
+
+
+
+
+
+</form>
+
+-->
 
 <!-- Display User Information -->

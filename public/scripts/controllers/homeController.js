@@ -7,6 +7,7 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
 
   //Get user inputs & send to server
   $scope.formSubmit = function() {
+    console.log($scope.ck, 'ck');
     //get input from users - in object to send to server
     var formDataToSend = {
       date: moment($('#datepicker').val()).format('MM-DD-YYYY'),

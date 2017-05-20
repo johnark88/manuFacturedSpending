@@ -12,11 +12,12 @@ router.post('/', function(req, res) {
   console.log(req.body, 'req');
   var newGiftCard = req.body;
   console.log(newGiftCard, 'newwwwwww');
-
-
   // Use connect method to connect to the server
   MongoClient.connect(url, function(err, db) {
-    assert.equal(null, err);
+    if (err) {
+      console.log(err);
+    }
+
     console.log("Connected successfully to server");
 
     // Insert a new gift card
@@ -27,15 +28,14 @@ router.post('/', function(req, res) {
       // insert new gift card from current user
       newGiftCard
     }, function(err, r) {
-      assert.equal(null, err);
-      assert.equal(1, r.insertedCount);
-      console.log(r.insertedCount, 'r.insertedCount');
+      console.log(r, 'RRRR');
+      console.log(r.result.ok, 'r.result.ok');
       //close connection to db
       db.close();
 
     }); //end mongo connect
-  });// end mongo client
-});//end router . post
+  }); // end mongo client
+}); //end router . post
 
 
 module.exports = router;
