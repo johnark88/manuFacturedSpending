@@ -28,6 +28,13 @@ app.use('/newGiftCard', homeRoutes);
 var firebase = require('./routes/firebase');
 app.use(firebase);
 
+// As an admin, the app has access to read and write all data, regardless of Security Rules
+var db = admin.database();
+var ref = db.ref("restricted_access/secret_document");
+ref.once("value", function(snapshot) {
+  console.log('b',snapshot.val());
+});
+
 //listen and port decision
 app.listen(portDecision, function() {
     console.log('listening on', portDecision);

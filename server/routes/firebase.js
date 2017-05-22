@@ -2,8 +2,9 @@ var router = require('express').Router();
 var path = require('path');
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./server/serviceAccountKey.json");
-console.log('firebase route');
+// Fetch the service account key JSON file contents
+var serviceAccount = require('./serviceAccountKey.json');
+// Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://mstrackingapp.firebaseio.com"
