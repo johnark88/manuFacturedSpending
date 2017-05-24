@@ -17,6 +17,8 @@ app.use('/inc', express.static(path.resolve('./node_modules/angular')));
 app.use('/inc', express.static(path.resolve('./node_modules/angular-ui-router/release')));
 app.use('/inc', express.static(path.resolve('./node_modules/jquery/dist')));
 app.use('/inc', express.static(path.resolve('./node_modules/moment/min')));
+app.use('/inc', express.static(path.resolve('./node_modules/bootstrap/dist/css')));
+app.use('/inc', express.static(path.resolve('./node_modules/bootstrap/dist/js')));
 //.json body parser
 app.use(bodyParser.json());
 

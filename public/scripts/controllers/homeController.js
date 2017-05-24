@@ -11,9 +11,9 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
     //get input from users - in object to send to server
     var formDataToSend = {
       date: moment($('#datepicker').val()).format('MM-DD-YYYY'),
-      location: $scope.location, // create drop down and let user add to it
+      location: $scope.locationSelect, // create drop down and let user add to it
       typeSelect: $scope.typeSelect,  //
-      credCardUsed: $scope.credCardUsed, // company(citi/chase/Amex) - personal or business - program(air/cash/gas)
+      credCardUsed: $scope.creditCardUsed, // company(citi/chase/Amex) - personal or business - program(air/cash/gas)
       totalSpent: $scope.totalSpent,
       fee: $scope.fee,
       pointsEarned: $scope.pointsEarned

@@ -2,39 +2,52 @@
   padding: 5px;
   text-align: center;
   margin: 40px;
+  display: block;
 }
 
 #date  {
-  margin: 6px;
+  margin: 10px;
   font-size: 13px;
 }
 
 #text  {
-  margin: 6px;
+  margin: 10px;
   font-size: 15px;
 }
 
-#typeSelect {
-  margin: 6px;
+.locationSelect {
+  margin: 10px;
   font-size: 13px;
 }
 
+.ccSelect {
+  margin: 10px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.gcType {
+  margin: 10px;
+  font-size: 13px;
+  display: inline-block;
+}
+
 #creditCardUsed {
-  margin: 6px;
+  margin: 10px;
   font-size: 13px;
 }
 
 #totalSpent {
-margin: 6px;
+margin: 10px;
 font-size: 13px;
 }
 
 #fee {
-  margin: 6px;
+  margin: 10px;
   font-size: 13px;
 }
 
 #pointsEarned {
-  margin: 6px;
+  margin: 10px;
   font-size: 13px;
 }
