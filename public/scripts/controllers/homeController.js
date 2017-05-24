@@ -1,9 +1,5 @@
 routerApp.controller('homeController', ['$scope', '$http', function($scope, $http) {
   console.log('Home controller');
-  //jquery datepicker
-  $(function() {
-    $("#datepicker").datepicker();
-  });
 
   //Get user inputs & send to server
   $scope.formSubmit = function() {
