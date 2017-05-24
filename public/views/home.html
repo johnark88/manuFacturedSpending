@@ -1,41 +1,17 @@
 <!-- StyleSheets -->
 <link rel="stylesheet" href="stylesheets/style.css">
-<p>home</p>
-<!-- Add new information form -->
-<!-- <form id="firstForm">
-  <input class="date-input" ng-model="date" type="text" id="datepicker" placeholder="mm/dd/yy" />
-  <input type="text" id="location" placeholder="Location" ng-model="location">
-  <br>
-  <select id="typeSelect" ng-model="typeSelect">
-        <option disabled selected value> -- Select Gift Card Type -- </option>
-        <option value="simon"> Simon </option>
-        <option value="oneVanilla"> One Vanilla </option>
-        <option value="visaGiftCard"> Visa Prepaid Gift Card </option>
-        <option value="masterGiftCard"> Mastercard Prepaid Gift Card </option>
-        <option value="Other"> Other </option>
-      </select>
-  <input type="text" id="creditCardUsed" placeholder="Credit Card Used" ng-model="credCardUsed">
-  <br>
-  <input type="text" id="totalSpent" placeholder="Total Spent" ng-model="totalSpent">
-  <input type="text" id="fee" placeholder="Fees" ng-model="fee">
-  <input type="text" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
-  <br>
-  <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
-  <input type="checkbox" name="ck" value="CHECKBOX">
-</form> -->
-
 <form id="firstForm">
   <div class="date">
-    <input class="date-input" ng-model="date" type="text" id="datepicker" placeholder="mm/dd/yy" />
-    <select class="locationSelect" ng-model="locationSelect">
-            <option disabled selected value> -- Purchased at -- </option>
-            <option value="Walgreens"> Walgreens </option>
-            <option value="CVS"> CVS </option>
-            <option value="addNewLocation"> Add New location</option>
-  </select>
+    <input id="date" type="date" ng-model="date">
+        <select class="locationSelect" ng-model="locationSelect">
+                <option disabled selected value> -- Purchased at -- </option>
+                <option value="Walgreens"> Walgreens </option>
+                <option value="CVS"> CVS </option>
+                <option value="addNewLocation"> Add New location</option>
+      </select>
   </div>
   <div class="gcType">
-    <select id="typeSelect" ng-model="typeSelect">
+        <select id="typeSelect" ng-model="typeSelect">
             <option disabled selected value> -- Select Gift Card Type -- </option>
             <option value="simon"> Simon </option>
             <option value="oneVanilla"> One Vanilla </option>
@@ -62,7 +38,4 @@
   <br>
   <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
 </form>
-
-
-
 <!-- Display User Information -->

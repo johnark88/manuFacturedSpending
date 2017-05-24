@@ -8,8 +8,6 @@ var url = 'mongodb://localhost:27017/mstrackingapp';
 
 //post route
 router.post('/', function(req, res) {
-
-  console.log(req.body, 'req');
   var newGiftCard = req.body;
   console.log(newGiftCard, 'newwwwwww');
   // Use connect method to connect to the server
@@ -29,10 +27,10 @@ router.post('/', function(req, res) {
       newGiftCard
     }, function(err, r) {
       console.log(r, 'RRRR');
-      console.log(r.result.ok, 'r.result.ok');
+      console.log(r.result, 'r.result');
       //close connection to db
       db.close();
-
+      res.send(r);
     }); //end mongo connect
   }); // end mongo client
 }); //end router . post
