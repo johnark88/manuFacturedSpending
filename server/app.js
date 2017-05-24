@@ -12,6 +12,7 @@ var urlencodedParser = bodyParser.urlencoded({
 var portDecision = process.env.PORT || 8081;
 //use public folder
 app.use(express.static(path.resolve('public')));
+
 //lib files
 app.use('/inc', express.static(path.resolve('./node_modules/angular')));
 app.use('/inc', express.static(path.resolve('./node_modules/angular-ui-router/release')));
@@ -19,6 +20,8 @@ app.use('/inc', express.static(path.resolve('./node_modules/jquery/dist')));
 app.use('/inc', express.static(path.resolve('./node_modules/moment/min')));
 app.use('/inc', express.static(path.resolve('./node_modules/bootstrap/dist/css')));
 app.use('/inc', express.static(path.resolve('./node_modules/bootstrap/dist/js')));
+app.use('/inc', express.static(path.resolve('./node_modules/tether/dist/js')));
+
 //.json body parser
 app.use(bodyParser.json());
 
