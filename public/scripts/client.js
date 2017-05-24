@@ -15,6 +15,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/home',
             templateUrl: 'views/home.html',
             controller: 'homeController'
+        })
+        .state('moneyOrder', {
+            url: '/moneyOrder',
+            templateUrl: 'views/moneyOrder.html',
+            controller: 'moneyOrderController'
         });
-
 });
