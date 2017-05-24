@@ -25,5 +25,19 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
       }).then(function(results){
         console.log(results, 'results');
       });//end http.then
+      if ($scope.checkBoxValue === true) {
+        console.log('its true - it is selected');
+        window.location = "/views/moneyOrder.html";
+      }else{
+        console.log('its false - it is not selected');
+        // window.location = list of all giftcards
+      }
+      $scope.date = '';
+      $scope.locationSelect = '';
+      $scope.typeSelect = '';
+      $scope.creditCardUsed = '';
+      $scope.totalSpent = '';
+      $scope.fee = '';
+      $scope.pointsEarned = '';
       }; //end formSubmit
 }]); //end home controller

@@ -34,8 +34,9 @@
   <input type="text" id="fee" placeholder="Fees" ng-model="fee">
   <input type="text" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
   <br>
-  <input type="checkbox" value="moneyOrderDetail"> Add Money Order Details
+  <input type="checkbox" ng-model='checkBoxValue' value="moneyOrderDetail"> Add Money Order Details
   <br>
   <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
 </form>
+
 <!-- Display User Information -->
