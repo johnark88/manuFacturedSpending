@@ -21,10 +21,12 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
       $http({
         method: 'POST',
         url: '/newGiftCard',
-        data: formDataToSend
+        data: formDataToSend 
       }).then(function(results){
         console.log(results, 'results');
       });//end http.then
+        //check value of check box selected = true / else its not selected = false
+        //if true change page to moneyOrder.html to add in money order details
       if ($scope.checkBoxValue === true) {
         console.log('its true - it is selected');
         window.location = "/views/moneyOrder.html";
@@ -32,12 +34,19 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
         console.log('its false - it is not selected');
         // window.location = list of all giftcards
       }
-      $scope.date = '';
-      $scope.locationSelect = '';
-      $scope.typeSelect = '';
-      $scope.creditCardUsed = '';
-      $scope.totalSpent = '';
-      $scope.fee = '';
-      $scope.pointsEarned = '';
+        //call clearFirstForm
+      clearFirstForm();
       }; //end formSubmit
+
+
+        //function to clear first form in home.html
+      function clearFirstForm(){
+        $scope.date = '';
+        $scope.locationSelect = '';
+        $scope.typeSelect = '';
+        $scope.creditCardUsed = '';
+        $scope.totalSpent = '';
+        $scope.fee = '';
+        $scope.pointsEarned = '';
+      }
 }]); //end home controller
