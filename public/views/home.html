@@ -1,5 +1,5 @@
 <!-- StyleSheets -->
-<link rel="stylesheet" href="stylesheets/style.css">
+<link rel="stylesheet" href="stylesheets/homeStyle.css">
 <form action="">
   <div class="form-group">
     <label for="date"> Select Date: </label>
@@ -13,8 +13,6 @@
               <option value="addNewLocation"> Add New location</option>
     </select>
   </div>
-
-
   <div class="form-group">
     <select class="form-control" id="typeSelect" ng-model="typeSelect">
             <option disabled selected value> -- Select Gift Card Type -- </option>
@@ -34,6 +32,7 @@
             <option value="addNewCC"> Add New </option>
     </select>
   </div>
+  <br>
   <div class="form-group">
     <input type="text" class="form-control" id="totalSpent" placeholder="Total Spent" ng-model="totalSpent">
   </div>
@@ -43,8 +42,10 @@
   <div class="form-group">
     <input type="text" class="form-control" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
   </div>
+  <br>
   <div class="form-group">
-    <input type="checkbox" class="form-control" id="moneyOrderCheck" ng-model='checkBoxValue' value="moneyOrderDetail"> Add Money Order Details
+    <label for="moneyOrderCheck"> Add Money Order Details </label>
+    <input type="checkbox" class="form-control" id="moneyOrderCheck" ng-model='checkBoxValue' value="moneyOrderDetail">
   </div>
   <div class="form-group">
     <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>

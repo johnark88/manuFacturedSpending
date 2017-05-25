@@ -7,7 +7,7 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
     var formDataToSend = {
       date: $scope.newDate,
       location: $scope.locationSelect,
-      typeSelect: $scope.typeSelect,  
+      typeSelect: $scope.typeSelect,
       credCardUsed: $scope.creditCardUsed, // company(citi/chase/Amex) - personal or business - program(air/cash/gas)
       totalSpent: $scope.totalSpent,
       fee: $scope.fee,
@@ -39,7 +39,6 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
       }; //end formSubmit
 
       //ng show ???
-
         //function to clear first form in home.html
       function clearFirstForm(){
         $scope.date = '';

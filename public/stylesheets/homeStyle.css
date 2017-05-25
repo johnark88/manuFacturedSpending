@@ -1,0 +1,12 @@
+.form-group {
+  margin: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.form-control {
+  font-size: 15px;
+  font-family: sans-serif;
+  text-align: center;
+}
