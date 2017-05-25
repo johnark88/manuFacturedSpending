@@ -1,17 +1,22 @@
 <!-- StyleSheets -->
 <link rel="stylesheet" href="stylesheets/style.css">
-<form id="firstForm">
-  <div class="date">
-    <input id="date" type="date" ng-model="date">
-        <select class="locationSelect" ng-model="locationSelect">
-                <option disabled selected value> -- Purchased at -- </option>
-                <option value="Walgreens"> Walgreens </option>
-                <option value="CVS"> CVS </option>
-                <option value="addNewLocation"> Add New location</option>
-      </select>
+<form action="">
+  <div class="form-group">
+    <label for="date"> Select Date: </label>
+    <input id="date" class="form-control" type="date" ng-model="date">
   </div>
-  <div class="gcType">
-        <select id="typeSelect" ng-model="typeSelect">
+  <div class="form-group">
+    <select class="form-control" id="locatiopnSelect" ng-model="locationSelect">
+              <option disabled selected value> -- Purchased at -- </option>
+              <option value="Walgreens"> Walgreens </option>
+              <option value="CVS"> CVS </option>
+              <option value="addNewLocation"> Add New location</option>
+    </select>
+  </div>
+
+
+  <div class="form-group">
+    <select class="form-control" id="typeSelect" ng-model="typeSelect">
             <option disabled selected value> -- Select Gift Card Type -- </option>
             <option value="simon"> Simon </option>
             <option value="oneVanilla"> One Vanilla </option>
@@ -20,8 +25,8 @@
             <option value="Other"> Other </option>
           </select>
   </div>
-  <div class="ccSelect">
-    <select class="creditCardUsed" name="" ng-model="creditCardUsed">
+  <div class="form-group">
+    <select class="form-control" id="creditCardUsed" name="" ng-model="creditCardUsed">
             <option disabled selected value> -- Credit Card Used -- </option>
             <option value="CSR"> CSR </option>
             <option value="AmexPersonal"> American Express personal </option>
@@ -29,14 +34,23 @@
             <option value="addNewCC"> Add New </option>
     </select>
   </div>
-  <br>
-  <input type="text" id="totalSpent" placeholder="Total Spent" ng-model="totalSpent">
-  <input type="text" id="fee" placeholder="Fees" ng-model="fee">
-  <input type="text" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
-  <br>
-  <input type="checkbox" ng-model='checkBoxValue' value="moneyOrderDetail"> Add Money Order Details
-  <br>
-  <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
+  <div class="form-group">
+    <input type="text" class="form-control" id="totalSpent" placeholder="Total Spent" ng-model="totalSpent">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="fee" placeholder="Fees" ng-model="fee">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="pointsEarned" placeholder="Points Earned" ng-model="pointsEarned">
+  </div>
+  <div class="form-group">
+    <input type="checkbox" class="form-control" id="moneyOrderCheck" ng-model='checkBoxValue' value="moneyOrderDetail"> Add Money Order Details
+  </div>
+  <div class="form-group">
+    <button ng-click="formSubmit()" id="submitForm" type="button"> Submit </button>
+  </div>
 </form>
+
+
 
 <!-- Display User Information -->

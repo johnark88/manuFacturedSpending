@@ -4,14 +4,10 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
   //Get user inputs & send to server
   $scope.formSubmit = function() {
     //get input from users - in object to send to server
-      $scope.newDate = moment($scope.date).format('MMMM Do YYYY');
-
-      console.log($scope.newDate, 'NEWDATE');
     var formDataToSend = {
-      // get rid of jquery!
       date: $scope.newDate,
-      location: $scope.locationSelect, // create drop down and let user add to it
-      typeSelect: $scope.typeSelect,  //
+      location: $scope.locationSelect,
+      typeSelect: $scope.typeSelect,  
       credCardUsed: $scope.creditCardUsed, // company(citi/chase/Amex) - personal or business - program(air/cash/gas)
       totalSpent: $scope.totalSpent,
       fee: $scope.fee,
