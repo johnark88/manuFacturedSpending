@@ -2,7 +2,7 @@ require('dotenv').config(); // Imports all .env values
 var path = require('path');
 var express = require('express');
 var app = express();
-var admin = require("firebase-admin");
+// var admin = require("firebase-admin");
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var bodyParser = require('body-parser');
@@ -30,8 +30,8 @@ var homeRoutes = require('./routes/homeRoutes');
 app.use('/newGiftCard', homeRoutes);
 
 //firebase-admin
-var firebase = require('./routes/firebase');
-app.use(firebase);
+// var firebase = require('./routes/firebase');
+// app.use(firebase);
 
 // As an admin, the app has access to read and write all data, regardless of Security Rules
 // var db = admin.database();
