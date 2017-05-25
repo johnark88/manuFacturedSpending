@@ -19,7 +19,6 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.3",
     "angular": "^1.6.4",
-    "angular-route": "^1.6.4",
     "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.6",
     "dotenv": "^4.0.0",
