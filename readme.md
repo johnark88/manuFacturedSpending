@@ -1,6 +1,7 @@
 # manuFactured Spending Tacking App
 
-Web App Native mobile app(coming Soon)
+- Web App
+- Native mobile app(coming Soon)
 
 Provides a simple way to track your manuFactured spending.
 
