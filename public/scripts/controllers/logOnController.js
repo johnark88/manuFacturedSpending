@@ -1,6 +1,6 @@
-routerApp.controller('logOnController', ['$scope', '$http', function($scope, $http) {
+routerApp.controller('logOnController', ['$scope', '$http','$state', function($scope, $http, $state) {
   console.log('Log On controller');
-  $scope.acountDetails = {};
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCm_yeHJa4tHtiINvTeq5FHBOynBIZFfYc",
@@ -11,13 +11,12 @@ routerApp.controller('logOnController', ['$scope', '$http', function($scope, $ht
     messagingSenderId: "955367157195"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
 
   $scope.logOn = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
-
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     firebase.auth().signInWithPopup(provider).then(function(result) {
-      provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-      // console.log(results,results);
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // console.log(token, 'Token');
@@ -46,8 +45,6 @@ routerApp.controller('logOnController', ['$scope', '$http', function($scope, $ht
              var phoneNumber = user.phoneNumber;
              var providerData = user.providerData;
              user.getIdToken().then(function(accessToken) {
-               $scope.signInStatus = 'Signed in';
-               $scope.signIn = 'Sign out';
                $scope.acountDetails = JSON.stringify({
                  displayName: displayName,
                  email: email,
@@ -59,13 +56,11 @@ routerApp.controller('logOnController', ['$scope', '$http', function($scope, $ht
                  providerData: providerData
                }, null, '  ');
                console.log($scope.acountDetails, 'acountDetails');
-               sessionStorage.userAuth = accessToken;
-               console.log(user, 'firebaseUser User');
                //store google profile info in session storage
+               sessionStorage.userAuth = accessToken;
                sessionStorage.userGoogleId = user.uid;
                sessionStorage.userDisplayName = user.displayName;
                sessionStorage.userPhotoUrl = user.photoURL;
-               $scope.ifFirebaseUser(user);
              });
            } else {
              // User is signed out.
@@ -75,39 +70,37 @@ routerApp.controller('logOnController', ['$scope', '$http', function($scope, $ht
          }, function(error) {
            console.log(error);
          });
-         console.log($scope.acountDetails, 'at the end');
 
   //sign user out from app
   $scope.signOut = function() {
     firebase.auth().signOut().then(function() {
-      // Sign-out successful.
       console.log('You logged out');
       emptySessionStorage();
-      $scope.ifFirebaseUser();
     }).catch(function(error) {
       // An error happened.
       console.log(error, 'error');
     }); //end catch
   }; //end signOut
-  $scope.ifFirebaseUser = function(user) {
-    if (user) {
-              $scope.loggedIn = true;
-              $scope.loggedOut = false;
-          } else {
-              $scope.loggedIn = false;
-              $scope.loggedOut = true;
-              // $location.reload();
-          }
-      };
+
+
+  // //if user profile is present show certain things
+  //   //else hide them
+  // $scope.ifFirebaseUser = function(user) {
+  //   if (user) {
+  //             $scope.loggedIn = true;
+  //             $scope.loggedOut = false;
+  //
+  //         } else {
+  //             $scope.loggedIn = false;
+  //             $scope.loggedOut = true;
+  //             $state.go('logOn', {}, { reload: 'logOn' });
+  //         }
+  //     };//end if firebase user
+
+
 //clear session storage on log out
 var emptySessionStorage = function() {
   sessionStorage.removeItem('userProfile');
   sessionStorage.removeItem('idToken');
 }; // end emptyLocalStorage
-
-$scope.tb = "asasdasdasdasdasda";
-
-$scope.testBatman = function(){
-  console.log('Test button on homepage');
-};
 }]); //end controller

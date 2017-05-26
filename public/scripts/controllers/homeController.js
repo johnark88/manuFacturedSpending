@@ -3,6 +3,8 @@ routerApp.controller('homeController', ['$scope', '$http', function($scope, $htt
 
   //Get user inputs & send to server
   $scope.formSubmit = function() {
+    $scope.newDate = moment($scope.date).format('MMMM Do YYYY');
+    console.log($scope.newDate, 'NEWDATE');
     //get input from users - in object to send to server
     var formDataToSend = {
       date: $scope.newDate,
