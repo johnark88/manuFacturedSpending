@@ -1,11 +1,20 @@
 <link rel="stylesheet" href="stylesheets/logOnStyle.css">
 <p> Log On </p>
 
+<!--
+ng-show="loggedOut"
+ng-show="loggedIn"
+ -->
 
-
-<form class="logInForm" action="index.html" method="post">
-  <button type="button" name="button" ng-click="logOn()"> Log In </button>
-  <button type="button" name="button" ng-click="signOut()"> Sign Out </button>
+<form class="logInForm" action="" method="">
+  <button type="button" name="button"  ng-click="logOn()"> Log In </button>
+  <button type="button" name="button"  ng-click="signOut()"> Sign Out </button>
 </form>
+
+<!-- <div class="">
+  <div ng-model="signInStatus" id="sign-in-status"> {{signInStatus}} </div>
+    <div ng-model="signIn" id="sign-in"> {{signIn}} </div>
+    <div ng-model="acountDetails" id="account-details"> {{accountDetails}} </div>
+</div> -->
 
 <div id="firebaseui-auth-container"></div>
