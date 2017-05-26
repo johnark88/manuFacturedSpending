@@ -51,3 +51,4 @@ serviceAccountKey.json
 .firebaserc
 firebase-debug.log
 firebase.json
+database-rules.json

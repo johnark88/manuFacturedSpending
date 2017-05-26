@@ -15,8 +15,9 @@ routerApp.controller('logOnController', ['$scope', '$http','$state', function($s
 
   $scope.logOn = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
     firebase.auth().signInWithPopup(provider).then(function(result) {
+      provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // console.log(token, 'Token');
@@ -55,12 +56,13 @@ routerApp.controller('logOnController', ['$scope', '$http','$state', function($s
                  accessToken: accessToken,
                  providerData: providerData
                }, null, '  ');
+               writeUserData(displayName, email, photoURL, uid);
                console.log($scope.acountDetails, 'acountDetails');
                //store google profile info in session storage
-               sessionStorage.userAuth = accessToken;
-               sessionStorage.userGoogleId = user.uid;
-               sessionStorage.userDisplayName = user.displayName;
-               sessionStorage.userPhotoUrl = user.photoURL;
+              //  sessionStorage.userAuth = accessToken;
+              //  sessionStorage.userGoogleId = user.uid;
+              //  sessionStorage.userDisplayName = user.displayName;
+              //  sessionStorage.userPhotoUrl = user.photoURL;
              });
            } else {
              // User is signed out.
@@ -97,10 +99,18 @@ routerApp.controller('logOnController', ['$scope', '$http','$state', function($s
   //         }
   //     };//end if firebase user
 
-
 //clear session storage on log out
 var emptySessionStorage = function() {
   sessionStorage.removeItem('userProfile');
   sessionStorage.removeItem('idToken');
 }; // end emptyLocalStorage
+
+function writeUserData(displayName, email, photoURL, uid) {
+  console.log(displayName);
+ firebase.database().ref('users/' + uid).set({
+   displayName: displayName,
+   email: email,
+   profile_picture : photoURL
+ });
+}
 }]); //end controller
