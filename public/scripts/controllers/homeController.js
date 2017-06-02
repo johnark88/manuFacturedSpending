@@ -1,6 +1,15 @@
 routerApp.controller('homeController', ['$scope', '$http', function($scope, $http) {
   console.log('Home controller');
+    // ideal method would be to get UID from firebase reatime DB
+    //else save it to session storage and retrive it there
 
+
+    //if firebase has UID then show this
+    //unless firebase offers some kind of option for this 
+  if (uid)
+   {
+      $scope.uidLoggedIn = true;
+  }
   //Get user inputs & send to server
   $scope.formSubmit = function() {
     $scope.newDate = moment($scope.date).format('MMMM Do YYYY');
